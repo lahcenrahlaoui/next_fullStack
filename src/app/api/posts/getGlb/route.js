@@ -31,10 +31,36 @@ export const GET = async (req ) => {
             const dir2 = `./public/assets/temp/texts/${id}`;
             const file = `./public/assets/temp/texts/${id}/${fileName}`;
             
-            if (!fs.existsSync(temp))    fs.mkdirSync(temp);
-            if (!fs.existsSync(tempText)) fs.mkdirSync(tempText);
-            if (!fs.existsSync(temp3d))    fs.mkdirSync(temp3d);
-            if (!fs.existsSync(dir2))   fs.mkdirSync(dir2);
+            if (!fs.existsSync(temp)) {
+                fs.mkdirSync(temp);
+                console.log(`Created directory: ${temp}`);
+            } else {
+                console.log(`Directory already exists: ${temp}`);
+            }
+            
+            if (!fs.existsSync(tempText)) {
+                fs.mkdirSync(tempText);
+                console.log(`Created directory: ${tempText}`);
+            } else {
+                console.log(`Directory already exists: ${tempText}`);
+            }
+            
+            if (!fs.existsSync(temp3d)) {
+                fs.mkdirSync(temp3d);
+                console.log(`Created directory: ${temp3d}`);
+            } else {
+                console.log(`Directory already exists: ${temp3d}`);
+            }
+            
+            if (!fs.existsSync(dir2)) {
+                fs.mkdirSync(dir2);
+                console.log(`Created directory: ${dir2}`);
+            } else {
+                console.log(`Directory already exists: ${dir2}`);
+            }
+
+            
+            
             if (!fs.existsSync(file))   
             {
                 const filePath = path.join(dir2, fileName);
