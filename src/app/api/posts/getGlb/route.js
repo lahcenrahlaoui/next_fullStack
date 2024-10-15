@@ -26,14 +26,16 @@ export const GET = async (req ) => {
             const fileName = j + ".txt";
     
             const temp = `./public/assets/temp`;
-            const dir1 = `./public/assets/temp/texts`;
+            const tempText = `./public/assets/temp/3d`;
+            const temp3d = `./public/assets/temp/texts`;
             const dir2 = `./public/assets/temp/texts/${id}`;
             const file = `./public/assets/temp/texts/${id}/${fileName}`;
             
             if (!fs.existsSync(temp))    fs.mkdirSync(temp);
-            if (!fs.existsSync(dir1))    fs.mkdirSync(dir1);
+            if (!fs.existsSync(tempText)) fs.mkdirSync(tempText);
+            if (!fs.existsSync(temp3d))    fs.mkdirSync(temp3d);
             if (!fs.existsSync(dir2))   fs.mkdirSync(dir2);
-            if (!fs.existsSync(file))  
+            if (!fs.existsSync(file))   
             {
                 const filePath = path.join(dir2, fileName);
                 
